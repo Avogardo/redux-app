@@ -64,7 +64,7 @@ export const incrementAsync = () => {
       dispatch({
         type: INCREMENT,
       })
-    }, 1000)
+    }, 1500)
   }
 };
 
@@ -90,6 +90,6 @@ export const decrementAsync = () => {
       dispatch({
         type: DECREMENT,
       })
-    }, 1000)
+    }, 1500)
   }
 };
