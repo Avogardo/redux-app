@@ -17,12 +17,24 @@ const Home = props => (
 
     <p>
       <button onClick={props.increment} disabled={props.isIncrementing}>Increment</button>
-      <button onClick={props.incrementAsync} disabled={props.isIncrementing}>Increment Async</button>
+      <button
+        onClick={props.incrementAsync}
+        disabled={props.isIncrementing}
+        style={{cursor: props.isIncrementing ? 'wait' : 'default'}}
+      >
+        Increment Async
+      </button>
     </p>
 
     <p>
       <button onClick={props.decrement} disabled={props.isDecrementing}>Decrementing</button>
-      <button onClick={props.decrementAsync} disabled={props.isDecrementing}>Decrement Async</button>
+      <button
+        onClick={props.decrementAsync}
+        disabled={props.isDecrementing}
+        style={{cursor: props.isDecrementing ? 'wait' : 'default'}}
+      >
+        Decrement Async
+      </button>
     </p>
 
     <p><button onClick={() => props.changePage()}>Go to about page via redux</button></p>
