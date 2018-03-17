@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
     case GET_LIST:
       return {
         ...state,
-        list: state.list = {a: 1},
+        list: state.list = {a: action.data},
       }
 
     default:
@@ -27,12 +27,16 @@ export const getListAsync = () => {
   return dispatch => {
     dispatch({
       type: LIST_REQUESTED,
-    })
+    });
 
-    return setTimeout(() => {
-      dispatch({
-        type: GET_LIST,
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => response.json())
+      .then(json => {
+        dispatch({
+          type: GET_LIST,
+          data: json.title,
+        });
       })
-    }, 1500)
+    ;
   }
 };
