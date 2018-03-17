@@ -46,7 +46,7 @@ const Home = props => (
     </p>
 
     <p>
-      <button onClick={() => props.getListAsync}>
+      <button onClick={props.getListAsync}>
         Get data
       </button>
     </p>
