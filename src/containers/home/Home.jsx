@@ -8,12 +8,14 @@ import {
   decrement,
   decrementAsync
 } from '../../modules/counter';
+import { getListAsync } from '../../modules/api';
 
 
 const Home = props => (
   <div>
     <h1>Home</h1>
     <p>Count: {props.count}</p>
+    <p>Data: {props.list.a}</p>
 
     <p>
       <button onClick={props.increment} disabled={props.isIncrementing}>Increment</button>
@@ -42,13 +44,20 @@ const Home = props => (
         Go to about page via redux
       </button>
     </p>
+
+    <p>
+      <button onClick={() => props.getListAsync}>
+        Get data
+      </button>
+    </p>
   </div>
 );
 
 const mapStateToProps = state => ({
   count: state.counter.count,
   isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
+  isDecrementing: state.counter.isDecrementing,
+  list: state.api.list,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -57,6 +66,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   decrement,
   decrementAsync,
   changePage: () => push('/about-us'),
+  getListAsync,
 }, dispatch);
 
 export default connect(

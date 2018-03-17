@@ -2,7 +2,7 @@ export const LIST_REQUESTED = 'counter/LIST_REQUESTED'
 export const GET_LIST = 'counter/GET_LIST';
 
 const initialState = {
-  list: {},
+  list: {a: 5},
 };
 
 export default (state = initialState, action) => {
