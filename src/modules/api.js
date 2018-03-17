@@ -2,7 +2,8 @@ export const LIST_REQUESTED = 'counter/LIST_REQUESTED'
 export const GET_LIST = 'counter/GET_LIST';
 
 const initialState = {
-  list: {a: 5},
+  list: {a: 'Title'},
+  isLoading: false,
 };
 
 export default (state = initialState, action) => {
@@ -10,12 +11,14 @@ export default (state = initialState, action) => {
     case LIST_REQUESTED:
       return {
         ...state,
+        isLoading: true,
       }
 
     case GET_LIST:
       return {
         ...state,
         list: state.list = {a: action.data},
+        isLoading: !state.isLoading,
       }
 
     default:

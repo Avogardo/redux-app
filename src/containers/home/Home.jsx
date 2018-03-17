@@ -46,7 +46,11 @@ const Home = props => (
     </p>
 
     <p>
-      <button onClick={props.getListAsync}>
+      <button
+        onClick={props.getListAsync}
+        disabled={props.isLoading}
+        style={{cursor: props.isLoading ? 'wait' : 'default'}}
+      >
         Get data
       </button>
     </p>
@@ -58,6 +62,7 @@ const mapStateToProps = state => ({
   isIncrementing: state.counter.isIncrementing,
   isDecrementing: state.counter.isDecrementing,
   list: state.api.list,
+  isLoading: state.api.isLoading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
