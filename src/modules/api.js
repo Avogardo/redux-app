@@ -1,6 +1,7 @@
 export const LIST_REQUESTED = 'counter/LIST_REQUESTED'
 export const GET_LIST = 'counter/GET_LIST';
 
+
 const initialState = {
   list: {a: 'Title'},
   isLoading: false,
@@ -17,14 +18,14 @@ export default (state = initialState, action) => {
     case GET_LIST:
       return {
         ...state,
-        list: state.list = {a: action.data},
+        list: state.list = { a: action.data },
         isLoading: !state.isLoading,
       }
 
     default:
       return state;
   }
-}
+};
 
 export const getListAsync = () => {
   return dispatch => {

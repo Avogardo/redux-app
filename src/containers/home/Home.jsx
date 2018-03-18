@@ -1,5 +1,4 @@
 import React from 'react';
-import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
@@ -9,6 +8,7 @@ import {
   decrementAsync
 } from '../../modules/counter';
 import { getListAsync } from '../../modules/api';
+import { goToAbout } from '../../modules/routerActions';
 
 
 const Home = props => (
@@ -70,7 +70,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   incrementAsync,
   decrement,
   decrementAsync,
-  changePage: () => push('/about-us'),
+  changePage: () => goToAbout(),
   getListAsync,
 }, dispatch);
 

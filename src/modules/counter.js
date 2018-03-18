@@ -3,6 +3,7 @@ export const INCREMENT = 'counter/INCREMENT';
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED';
 export const DECREMENT = 'counter/DECREMENT';
 
+
 const initialState = {
   count: 0,
   isIncrementing: false,
@@ -40,7 +41,7 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export const increment = () => {
   return dispatch => {

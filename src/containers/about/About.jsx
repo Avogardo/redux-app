@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
+import { goHome } from '../../modules/routerActions';
 
 
 const About = props => (
   <div>
     <h1>About Us</h1>
     <p>
-      Counter: {props.count}<br/>
+      Counter: { props.count }<br/>
       What about us?<br/>
       What about all the times you said you had the answers?<br/>
       What about us?<br/>
@@ -25,7 +25,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  goHome: () => push('/'),
+  goHome: () => goHome(),
 }, dispatch);
 
 export default connect(
