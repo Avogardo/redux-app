@@ -13,11 +13,6 @@ import { goToAbout } from '../../modules/routerActions';
 
 
 class Home extends React.Component {
-  componentDidMount() {
-    const { getDataRequested } = this.props;
-    getDataRequested();
-  }
-
   render() {
     const {
       count,
@@ -34,6 +29,7 @@ class Home extends React.Component {
       isLoading,
       isError,
       repositories,
+      getDataRequested,
     } = this.props;
 
     return (
@@ -72,7 +68,7 @@ class Home extends React.Component {
 
         <p>
           <button
-            onClick={getListAsync}
+            onClick={() => {getListAsync(); getDataRequested() }}
             disabled={isLoadingTitle}
             style={{cursor: isLoadingTitle ? 'wait' : 'default'}}
           >

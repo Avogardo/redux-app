@@ -25,20 +25,20 @@ export const getListAsync = () => {
 
 export function getDataRequested() {
   return {
-    type: 'GET_DATA_REQUESTED'
+    type: 'GET_DATA_REQUESTED',
   };
 }
 
 export function getDataDone(data) {
   return {
     type: 'GET_DATA_DONE',
-    payload: data
+    payload: data,
   };
 }
 
 export function getDataFailed(error) {
   return {
     type: 'GET_DATA_FAILED',
-    payload: error
+    payload: error,
   };
 }
