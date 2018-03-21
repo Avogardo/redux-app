@@ -6,8 +6,8 @@ import {
   incrementAsync,
   decrement,
   decrementAsync
-} from '../../modules/counter';
-import { getListAsync, getDataRequested } from '../../modules/apiActions';
+} from '../../modules/counter/counter';
+import { getListAsync, getDataRequested } from '../../modules/api/apiActions';
 import { goToAbout } from '../../modules/routerActions';
 
 
