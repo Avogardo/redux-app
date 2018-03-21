@@ -1,1 +1,1 @@
-Simple app to learn redux
+Simple app to learn redux and saga
