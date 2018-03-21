@@ -7,7 +7,7 @@ import {
   decrement,
   decrementAsync
 } from '../../modules/counter';
-import { getListAsync } from '../../modules/api';
+import { getListAsync } from '../../modules/apiActions';
 import { goToAbout } from '../../modules/routerActions';
 
 
