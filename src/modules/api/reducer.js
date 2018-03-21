@@ -1,8 +1,8 @@
-import * as actions from './apiActions';
+import * as actions from './actions';
 
 
 const initialState = {
-  list: {a: 'Title'},
+  list: { a: 'Title' },
   isLoadingTitle: false,
   isLoading: false,
   isError: false,

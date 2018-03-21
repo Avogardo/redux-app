@@ -1,4 +1,4 @@
-import * as actions from './modules/api/apiActions.js';
+import * as actions from './modules/api/actions.js';
 import fetch from 'isomorphic-fetch';
 import { call, put, takeEvery } from 'redux-saga/effects';
 

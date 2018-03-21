@@ -23,14 +23,12 @@ if (process.env.NODE_ENV === 'development') {
   if (typeof devToolsExtension === 'function') {
     enhancers.push(devToolsExtension());
   }
-}
+};
 
 const composedEnhancers = compose(
   applyMiddleware(...middleware),
   ...enhancers,
-)
-
-
+);
 
 const store = createStore(
   rootReducer,
